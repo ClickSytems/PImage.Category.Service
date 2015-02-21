@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PImage.Category.Service.Web
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PImage.Category.DTO", "..\PImage.Category.DTO\PImage.Category.DTO.csproj", "{7BB16F0E-7368-46EE-937A-CFF4582FC4AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PImage.Category.DataModel", "PImage.Category.DataModel\PImage.Category.DataModel.csproj", "{66C0B589-14CE-4C88-8FE4-7E602D0C517F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7BB16F0E-7368-46EE-937A-CFF4582FC4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BB16F0E-7368-46EE-937A-CFF4582FC4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BB16F0E-7368-46EE-937A-CFF4582FC4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66C0B589-14CE-4C88-8FE4-7E602D0C517F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66C0B589-14CE-4C88-8FE4-7E602D0C517F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66C0B589-14CE-4C88-8FE4-7E602D0C517F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66C0B589-14CE-4C88-8FE4-7E602D0C517F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
