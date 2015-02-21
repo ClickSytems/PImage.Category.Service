@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PImage.Category.Service.WebAPI", "PImage.Category.Service.WebAPI\PImage.Category.Service.WebAPI.csproj", "{3685E64D-45F8-4FAF-A549-8C207455DC16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PImage.Category.Service.WebAPI.Tests", "PImage.Category.Service.WebAPI.Tests\PImage.Category.Service.WebAPI.Tests.csproj", "{26EB414C-99C7-4284-836B-24A3BA6BD26C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PImage.Category.DTO", "..\PImage.Category.DTO\PImage.Category.DTO.csproj", "{7BB16F0E-7368-46EE-937A-CFF4582FC4AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3685E64D-45F8-4FAF-A549-8C207455DC16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3685E64D-45F8-4FAF-A549-8C207455DC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3685E64D-45F8-4FAF-A549-8C207455DC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3685E64D-45F8-4FAF-A549-8C207455DC16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26EB414C-99C7-4284-836B-24A3BA6BD26C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26EB414C-99C7-4284-836B-24A3BA6BD26C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26EB414C-99C7-4284-836B-24A3BA6BD26C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26EB414C-99C7-4284-836B-24A3BA6BD26C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BB16F0E-7368-46EE-937A-CFF4582FC4AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB16F0E-7368-46EE-937A-CFF4582FC4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB16F0E-7368-46EE-937A-CFF4582FC4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB16F0E-7368-46EE-937A-CFF4582FC4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
