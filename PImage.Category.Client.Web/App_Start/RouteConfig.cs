@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace PImage.Category.Service.WebAPI
+namespace PImage.Category.Client.Web
 {
     public class RouteConfig
     {
@@ -18,7 +18,6 @@ namespace PImage.Category.Service.WebAPI
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-
         }
     }
 }

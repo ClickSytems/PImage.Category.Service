@@ -27,7 +27,7 @@ namespace PImage.Category.Service.WebAPI.Controllers
         }
 
         // GET: api/Categories/5
-        [Route("Categories")]
+        [Route("Categories/{id}")]
         [ResponseType(typeof(Model.Category))]
         public IHttpActionResult GetCategory(int id)
         {
@@ -41,7 +41,7 @@ namespace PImage.Category.Service.WebAPI.Controllers
         }
 
         // PUT: api/Categories/5
-        [Route("Categories")]
+        [Route("Categories/{id}")]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutCategory(int id, Model.Category category)
         {
@@ -93,7 +93,7 @@ namespace PImage.Category.Service.WebAPI.Controllers
         }
 
         // DELETE: api/Categories/5
-        [Route("Categories")]
+        [Route("Categories/{id}")]
         [ResponseType(typeof(Model.Category))]
         public IHttpActionResult DeleteCategory(int id)
         {
@@ -125,7 +125,7 @@ namespace PImage.Category.Service.WebAPI.Controllers
         }
 
         // GET: api/Categories/5
-        [Route("SubCategories")]
+        [Route("SubCategories/{id}")]
         [ResponseType(typeof(Model.SubCategory))]
         public IHttpActionResult GetSubCategory(int id)
         {
@@ -139,7 +139,7 @@ namespace PImage.Category.Service.WebAPI.Controllers
         }
 
         // PUT: api/Categories/5
-        [Route("SubCategories")]
+        [Route("SubCategories/{id}")]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutCategory(int id, Model.SubCategory subCategory)
         {
@@ -191,7 +191,7 @@ namespace PImage.Category.Service.WebAPI.Controllers
         }
 
         // DELETE: api/Categories/5
-        [Route("SubCategories")]
+        [Route("SubCategories/{id}")]
         [ResponseType(typeof(Model.SubCategory))]
         public IHttpActionResult DeleteSubCategory(int id)
         {
