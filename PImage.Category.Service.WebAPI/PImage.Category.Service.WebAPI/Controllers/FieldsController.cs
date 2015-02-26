@@ -8,13 +8,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using PImage.Category.DTO;
 using PImage.Category.DataModel;
 
 namespace PImage.Category.Service.WebAPI.Controllers
 {
     public class FieldsController : ApiController
     {
-        private CategoryEntities db = new CategoryEntities();
+        private CategoryDataContext db = new CategoryDataContext();
 
         // GET: api/Fields
         public IQueryable<Field> GetField()

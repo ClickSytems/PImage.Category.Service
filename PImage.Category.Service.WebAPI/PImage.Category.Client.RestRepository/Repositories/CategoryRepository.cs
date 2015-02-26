@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using DTO = PImage.Category.DTO;
 
 namespace PImage.Category.Client.RestRepository.Repositories
 {
@@ -29,11 +23,6 @@ namespace PImage.Category.Client.RestRepository.Repositories
 
         public const string CONTENT_TYPE = "application/json";
 
-
-
-
-    
-        
         public CategoryRepository()
         {
         }
@@ -46,21 +35,21 @@ namespace PImage.Category.Client.RestRepository.Repositories
         public void Update(DTO.Category category, string serviceURI)
         {
             try
-			{
+            {
                 string json = Helper.Serializer.Serialize<DTO.Category>(category);
 
                 string fullUri = string.Format(serviceURI + CATEGORY_UPDATE_URI, category.Id);
 
-                RestService.NotifyWebService(json, fullUri, CATEGORY_UPDATE_URI_TYPE, CONTENT_TYPE);
-				
-			}
-			catch (WebException e)
-			{
-				using (WebResponse response = e.Response)
-				{
-					HttpStatusCode httpResponse = ((HttpWebResponse)response).StatusCode;
-				}
-			}
+                RestService.NotifyService(json, fullUri, CATEGORY_UPDATE_URI_TYPE, CONTENT_TYPE);
+
+            }
+            catch (WebException e)
+            {
+                using (WebResponse response = e.Response)
+                {
+                    HttpStatusCode httpResponse = ((HttpWebResponse)response).StatusCode;
+                }
+            }
 
         }
 
@@ -113,7 +102,7 @@ namespace PImage.Category.Client.RestRepository.Repositories
 
                 serviceURI += CATEGORY_CREATE_URI;
 
-                RestService.NotifyWebService(json, serviceURI, CATEGORY_CREATE_URI_TYPE, CONTENT_TYPE);
+                RestService.NotifyService(json, serviceURI, CATEGORY_CREATE_URI_TYPE, CONTENT_TYPE);
 
             }
             catch (WebException e)
@@ -128,12 +117,12 @@ namespace PImage.Category.Client.RestRepository.Repositories
 
         public void Delete(int id, string serviceURI)
         {
-            
+
             string fullUri = string.Format(serviceURI + CATEGORY_DELETE_URI, id);
 
             try
             {
-                RestService.NotifyWebService("", fullUri, CATEGORY_DELETE_URI_TYPE, CONTENT_TYPE);
+                RestService.NotifyService("", fullUri, CATEGORY_DELETE_URI_TYPE, CONTENT_TYPE);
             }
             catch (Exception e)
             {

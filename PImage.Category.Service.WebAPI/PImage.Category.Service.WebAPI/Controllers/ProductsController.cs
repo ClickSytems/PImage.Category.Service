@@ -1,6 +1,4 @@
-﻿using PImage.Category.DataModel;
-using PImage.Category.Service.WebAPI.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -10,49 +8,49 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-//using PImage.Category.DataModel;
-using DTO = PImage.Category.DTO;
+using PImage.Category.DTO;
+using PImage.Category.DataModel;
 
 namespace PImage.Category.Service.WebAPI.Controllers
 {
-    public class CategoriesController : ApiController
+    public class ProductsController : ApiController
     {
         private CategoryDataContext db = new CategoryDataContext();
 
-        // GET: api/Categories
-        public IQueryable<DTO.Category> GetCategory()
+        // GET: api/Products
+        public IQueryable<Product> GetProducts()
         {
-            return db.Category;
+            return db.Products;
         }
 
-        // GET: api/Categories/5
-        [ResponseType(typeof(DTO.Category))]
-        public IHttpActionResult GetCategory(int id)
+        // GET: api/Products/5
+        [ResponseType(typeof(Product))]
+        public IHttpActionResult GetProduct(int id)
         {
-            DTO.Category category = db.Category.Find(id);
-            if (category == null)
+            Product product = db.Products.Find(id);
+            if (product == null)
             {
                 return NotFound();
             }
 
-            return Ok(category);
+            return Ok(product);
         }
 
-        // PUT: api/Categories/5
+        // PUT: api/Products/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutCategory(int id, DTO.Category category)
+        public IHttpActionResult PutProduct(int id, Product product)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != category.Id)
+            if (id != product.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(category).State = EntityState.Modified;
+            db.Entry(product).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +58,7 @@ namespace PImage.Category.Service.WebAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CategoryExists(id))
+                if (!ProductExists(id))
                 {
                     return NotFound();
                 }
@@ -73,35 +71,35 @@ namespace PImage.Category.Service.WebAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Categories
-        [ResponseType(typeof(DTO.Category))]
-        public IHttpActionResult PostCategory(DTO.Category category)
+        // POST: api/Products
+        [ResponseType(typeof(Product))]
+        public IHttpActionResult PostProduct(Product product)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Category.Add(category);
+            db.Products.Add(product);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = category.Id }, category);
+            return CreatedAtRoute("DefaultApi", new { id = product.Id }, product);
         }
 
-        // DELETE: api/Categories/5
-        [ResponseType(typeof(DTO.Category))]
-        public IHttpActionResult DeleteCategory(int id)
+        // DELETE: api/Products/5
+        [ResponseType(typeof(Product))]
+        public IHttpActionResult DeleteProduct(int id)
         {
-            DTO.Category category = db.Category.Find(id);
-            if (category == null)
+            Product product = db.Products.Find(id);
+            if (product == null)
             {
                 return NotFound();
             }
 
-            db.Category.Remove(category);
+            db.Products.Remove(product);
             db.SaveChanges();
 
-            return Ok(category);
+            return Ok(product);
         }
 
         protected override void Dispose(bool disposing)
@@ -113,9 +111,9 @@ namespace PImage.Category.Service.WebAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool CategoryExists(int id)
+        private bool ProductExists(int id)
         {
-            return db.Category.Count(e => e.Id == id) > 0;
+            return db.Products.Count(e => e.Id == id) > 0;
         }
     }
 }

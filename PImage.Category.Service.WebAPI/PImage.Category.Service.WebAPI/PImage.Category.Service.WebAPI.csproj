@@ -199,11 +199,23 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\FieldsController.cs" />
+    <Compile Include="Controllers\FieldValuesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\SubCategoriesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502260245086_Product_Removed.cs" />
+    <Compile Include="Migrations\201502260245086_Product_Removed.Designer.cs">
+      <DependentUpon>201502260245086_Product_Removed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502261935083_Properties_Checked.cs" />
+    <Compile Include="Migrations\201502261935083_Properties_Checked.Designer.cs">
+      <DependentUpon>201502261935083_Properties_Checked.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -279,10 +291,22 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\PImage.Category.DTO\PImage.Category.DTO.csproj">
+      <Project>{7bb16f0e-7368-46ee-937a-cff4582fc4ab}</Project>
+      <Name>PImage.Category.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PImage.Category.DataModel\PImage.Category.DataModel.csproj">
       <Project>{66c0b589-14ce-4c88-8fe4-7e602d0c517f}</Project>
       <Name>PImage.Category.DataModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201502260245086_Product_Removed.resx">
+      <DependentUpon>201502260245086_Product_Removed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502261935083_Properties_Checked.resx">
+      <DependentUpon>201502261935083_Properties_Checked.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

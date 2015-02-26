@@ -1,25 +1,21 @@
 ﻿using PImage.Category.Client.RestRepository.MessagingFacades;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PImage.Category.Client.RestRepository
 {
     public sealed class ServiceConnection
     {
-		public string ServiceUri
-		{
-			internal set;
-			get;
-		}
+        public string ServiceUri
+        {
+            internal set;
+            get;
+        }
 
-		public CategoriesFacade Categories
-		{
-			get;
-			private set;
-		}
+        public FieldsFacade Categories
+        {
+            get;
+            private set;
+        }
 
         public SubCategoriesFacade SubCategories
         {
@@ -27,31 +23,31 @@ namespace PImage.Category.Client.RestRepository
             private set;
         }
 
-		static ServiceConnection()
-		{
-		}
+        static ServiceConnection()
+        {
+        }
 
-		private ServiceConnection()
-		{
-			InitializeFacades();
-		}
+        private ServiceConnection()
+        {
+            InitializeFacades();
+        }
 
-		public ServiceConnection(string serviceUri)
-			: this()
-		{
-			if (string.IsNullOrEmpty(serviceUri))
-			{
-				throw new ArgumentNullException("ServiceUri");
-			}
+        public ServiceConnection(string serviceUri)
+            : this()
+        {
+            if (string.IsNullOrEmpty(serviceUri))
+            {
+                throw new ArgumentNullException("ServiceUri");
+            }
 
-			ServiceUri = serviceUri;
-		}
+            ServiceUri = serviceUri;
+        }
 
 
-		private void InitializeFacades()
-		{
-			Categories = new CategoriesFacade(this);
-			SubCategories = new SubCategoriesFacade(this);
-		}
+        private void InitializeFacades()
+        {
+            Categories = new FieldsFacade(this);
+            SubCategories = new SubCategoriesFacade(this);
+        }
     }
 }

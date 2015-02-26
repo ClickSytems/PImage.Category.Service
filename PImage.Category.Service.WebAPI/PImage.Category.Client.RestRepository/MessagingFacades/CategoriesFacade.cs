@@ -1,9 +1,5 @@
 ﻿using PImage.Category.Client.RestRepository.Repositories;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PImage.Category.Client.RestRepository.MessagingFacades
 {
@@ -12,10 +8,10 @@ namespace PImage.Category.Client.RestRepository.MessagingFacades
         private CategoryRepository _categoryRepository;
 
         public CategoriesFacade(ServiceConnection serviceConnection)
-			: base(serviceConnection)
-		{
+            : base(serviceConnection)
+        {
             _categoryRepository = new CategoryRepository();
-		}
+        }
 
         public DTO.Category New()
         {
@@ -34,15 +30,12 @@ namespace PImage.Category.Client.RestRepository.MessagingFacades
 
         public DTO.Category Get(int id)
         {
-
             return _categoryRepository.Get(id, Connection.ServiceUri);
-
         }
 
         public void Create(DTO.Category category)
         {
             _categoryRepository.Create(category, Connection.ServiceUri);
-
         }
 
         public void Delete(int id)

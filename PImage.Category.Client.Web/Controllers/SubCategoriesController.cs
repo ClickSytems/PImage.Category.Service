@@ -20,8 +20,7 @@ namespace PImage.Category.Client.Web.Controllers
         // GET: SubCategories
         public ActionResult Index()
         {
-            var subCategories = ws.SubCategories.Get();
-            return View(subCategories.ToList());
+            return View(ws.SubCategories.Get());
         }
 
         // GET: SubCategories/Details/5
@@ -42,7 +41,6 @@ namespace PImage.Category.Client.Web.Controllers
         // GET: SubCategories/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryId = new SelectList(ws.Categories.Get(), "Id", "Description");
             return View();
         }
 
@@ -59,7 +57,6 @@ namespace PImage.Category.Client.Web.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryId = new SelectList(ws.Categories.Get(), "Id", "Description", subCategory.CategoryId);
             return View(subCategory);
         }
 
@@ -75,7 +72,6 @@ namespace PImage.Category.Client.Web.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoryId = new SelectList(ws.Categories.Get(), "Id", "Description", subCategory.CategoryId);
             return View(subCategory);
         }
 
@@ -91,7 +87,6 @@ namespace PImage.Category.Client.Web.Controllers
                 ws.SubCategories.Update(subCategory);
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryId = new SelectList(ws.Categories.Get(), "Id", "Description", subCategory.CategoryId);
             return View(subCategory);
         }
 
@@ -115,8 +110,7 @@ namespace PImage.Category.Client.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            SubCategory subCategory = ws.SubCategories.Get(id);
-            ws.SubCategories.Delete(subCategory.Id);
+            ws.SubCategories.Delete(id);
             return RedirectToAction("Index");
         }
 

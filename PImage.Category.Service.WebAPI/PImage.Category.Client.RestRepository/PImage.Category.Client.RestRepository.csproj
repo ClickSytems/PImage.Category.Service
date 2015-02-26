@@ -42,9 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\Serializer.cs" />
+    <Compile Include="MessagingFacades\ProductsFacade.cs" />
+    <Compile Include="MessagingFacades\FieldValuesFacade.cs" />
+    <Compile Include="MessagingFacades\FieldsFacade.cs" />
     <Compile Include="MessagingFacades\CategoriesFacade.cs" />
     <Compile Include="MessagingFacades\FacadeBase.cs" />
     <Compile Include="MessagingFacades\SubCategoriesFacade.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\FieldValuesRepository.cs" />
+    <Compile Include="Repositories\FieldRepository.cs" />
     <Compile Include="Repositories\CategoryRepository.cs" />
     <Compile Include="Repositories\IRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

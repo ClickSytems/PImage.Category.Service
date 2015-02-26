@@ -49,66 +49,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category.cs">
-      <DependentUpon>CategoryDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CategoryDataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CategoryDataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CategoryDataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CategoryDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CategoryDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CategoryDataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Field.cs">
-      <DependentUpon>CategoryDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FieldValues.cs">
-      <DependentUpon>CategoryDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Product.cs">
-      <DependentUpon>CategoryDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductsView.cs">
-      <DependentUpon>CategoryDataModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="CategoryDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SubCategory.cs">
-      <DependentUpon>CategoryDataModel.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="CategoryDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CategoryDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="CategoryDataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CategoryDataModel.edmx</DependentUpon>
-      <LastGenOutput>CategoryDataModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="CategoryDataModel.edmx.diagram">
-      <DependentUpon>CategoryDataModel.edmx</DependentUpon>
-    </None>
-    <None Include="CategoryDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CategoryDataModel.edmx</DependentUpon>
-      <LastGenOutput>CategoryDataModel.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PImage.Category.DTO\PImage.Category.DTO.csproj">
+      <Project>{7bb16f0e-7368-46ee-937a-cff4582fc4ab}</Project>
+      <Name>PImage.Category.DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

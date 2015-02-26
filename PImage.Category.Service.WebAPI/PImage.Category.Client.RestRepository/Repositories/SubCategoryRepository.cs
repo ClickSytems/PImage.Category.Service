@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using DTO = PImage.Category.DTO;
 
 namespace PImage.Category.Client.RestRepository.Repositories
 {
     public class SubCategoryRepository : RepositoryBase<DTO.SubCategory>
-  {
+    {
         public const string SUBCATEGORY_GET_URI = "/api/SubCategories";
         public const string SUBCATEGORY_GET_URI_TYPE = "GET";
 
@@ -39,21 +35,21 @@ namespace PImage.Category.Client.RestRepository.Repositories
         public void Update(DTO.SubCategory category, string serviceURI)
         {
             try
-			{
+            {
                 string json = Helper.Serializer.Serialize<DTO.SubCategory>(category);
 
                 string fullUri = string.Format(serviceURI + SUBCATEGORY_UPDATE_URI, category.Id);
 
-                RestService.NotifyWebService(json, fullUri, SUBCATEGORY_UPDATE_URI_TYPE, CONTENT_TYPE);
-				
-			}
-			catch (WebException e)
-			{
-				using (WebResponse response = e.Response)
-				{
-					HttpStatusCode httpResponse = ((HttpWebResponse)response).StatusCode;
-				}
-			}
+                RestService.NotifyService(json, fullUri, SUBCATEGORY_UPDATE_URI_TYPE, CONTENT_TYPE);
+
+            }
+            catch (WebException e)
+            {
+                using (WebResponse response = e.Response)
+                {
+                    HttpStatusCode httpResponse = ((HttpWebResponse)response).StatusCode;
+                }
+            }
 
         }
 
@@ -106,7 +102,7 @@ namespace PImage.Category.Client.RestRepository.Repositories
 
                 serviceURI += SUBCATEGORY_CREATE_URI;
 
-                RestService.NotifyWebService(json, serviceURI, SUBCATEGORY_CREATE_URI_TYPE, CONTENT_TYPE);
+                RestService.NotifyService(json, serviceURI, SUBCATEGORY_CREATE_URI_TYPE, CONTENT_TYPE);
 
             }
             catch (WebException e)
@@ -121,12 +117,12 @@ namespace PImage.Category.Client.RestRepository.Repositories
 
         public void Delete(int id, string serviceURI)
         {
-            
+
             string fullUri = string.Format(serviceURI + SUBCATEGORY_DELETE_URI, id);
 
             try
             {
-                RestService.NotifyWebService("", fullUri, SUBCATEGORY_DELETE_URI_TYPE, CONTENT_TYPE);
+                RestService.NotifyService("", fullUri, SUBCATEGORY_DELETE_URI_TYPE, CONTENT_TYPE);
             }
             catch (Exception e)
             {

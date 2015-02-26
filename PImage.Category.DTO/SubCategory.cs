@@ -1,14 +1,12 @@
 namespace PImage.Category.DTO
 {
-    using System;
     using System.Collections.Generic;
     
     public class SubCategory
     {
         public SubCategory()
         {
-            this.Field = new HashSet<Field>();
-            this.Product = new HashSet<Product>();
+            this.Fields = new HashSet<Field>();
         }
     
         public int Id { get; set; }
@@ -16,8 +14,7 @@ namespace PImage.Category.DTO
         public string Slug { get; set; }
         public int CategoryId { get; set; }
     
-        public virtual Category Category { get; set; }
-        public virtual ICollection<Field> Field { get; set; }
-        public virtual ICollection<Product> Product { get; set; }
+        public ICollection<Field> Fields { get; set; }
+
     }
 }

@@ -1,6 +1,4 @@
-﻿using PImage.Category.DataModel;
-using PImage.Category.Service.WebAPI.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -10,49 +8,49 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-//using PImage.Category.DataModel;
-using DTO = PImage.Category.DTO;
+using PImage.Category.DTO;
+using PImage.Category.DataModel;
 
 namespace PImage.Category.Service.WebAPI.Controllers
 {
-    public class CategoriesController : ApiController
+    public class FieldValuesController : ApiController
     {
         private CategoryDataContext db = new CategoryDataContext();
 
-        // GET: api/Categories
-        public IQueryable<DTO.Category> GetCategory()
+        // GET: api/FieldValues
+        public IQueryable<FieldValues> GetFieldValues()
         {
-            return db.Category;
+            return db.FieldValues;
         }
 
-        // GET: api/Categories/5
-        [ResponseType(typeof(DTO.Category))]
-        public IHttpActionResult GetCategory(int id)
+        // GET: api/FieldValues/5
+        [ResponseType(typeof(FieldValues))]
+        public IHttpActionResult GetFieldValues(int id)
         {
-            DTO.Category category = db.Category.Find(id);
-            if (category == null)
+            FieldValues fieldValues = db.FieldValues.Find(id);
+            if (fieldValues == null)
             {
                 return NotFound();
             }
 
-            return Ok(category);
+            return Ok(fieldValues);
         }
 
-        // PUT: api/Categories/5
+        // PUT: api/FieldValues/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutCategory(int id, DTO.Category category)
+        public IHttpActionResult PutFieldValues(int id, FieldValues fieldValues)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != category.Id)
+            if (id != fieldValues.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(category).State = EntityState.Modified;
+            db.Entry(fieldValues).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +58,7 @@ namespace PImage.Category.Service.WebAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CategoryExists(id))
+                if (!FieldValuesExists(id))
                 {
                     return NotFound();
                 }
@@ -73,35 +71,35 @@ namespace PImage.Category.Service.WebAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Categories
-        [ResponseType(typeof(DTO.Category))]
-        public IHttpActionResult PostCategory(DTO.Category category)
+        // POST: api/FieldValues
+        [ResponseType(typeof(FieldValues))]
+        public IHttpActionResult PostFieldValues(FieldValues fieldValues)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Category.Add(category);
+            db.FieldValues.Add(fieldValues);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = category.Id }, category);
+            return CreatedAtRoute("DefaultApi", new { id = fieldValues.Id }, fieldValues);
         }
 
-        // DELETE: api/Categories/5
-        [ResponseType(typeof(DTO.Category))]
-        public IHttpActionResult DeleteCategory(int id)
+        // DELETE: api/FieldValues/5
+        [ResponseType(typeof(FieldValues))]
+        public IHttpActionResult DeleteFieldValues(int id)
         {
-            DTO.Category category = db.Category.Find(id);
-            if (category == null)
+            FieldValues fieldValues = db.FieldValues.Find(id);
+            if (fieldValues == null)
             {
                 return NotFound();
             }
 
-            db.Category.Remove(category);
+            db.FieldValues.Remove(fieldValues);
             db.SaveChanges();
 
-            return Ok(category);
+            return Ok(fieldValues);
         }
 
         protected override void Dispose(bool disposing)
@@ -113,9 +111,9 @@ namespace PImage.Category.Service.WebAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool CategoryExists(int id)
+        private bool FieldValuesExists(int id)
         {
-            return db.Category.Count(e => e.Id == id) > 0;
+            return db.FieldValues.Count(e => e.Id == id) > 0;
         }
     }
 }

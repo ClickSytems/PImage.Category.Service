@@ -1,8 +1,6 @@
 namespace PImage.Category.DTO
 {
-    using System;
-    using System.Collections.Generic;
-    
+
     public class FieldValues
     {
         public int Id { get; set; }
@@ -10,6 +8,5 @@ namespace PImage.Category.DTO
         public int Order { get; set; }
         public string FieldValue { get; set; }
     
-        public virtual Field Field { get; set; }
-    }
+   }
 }

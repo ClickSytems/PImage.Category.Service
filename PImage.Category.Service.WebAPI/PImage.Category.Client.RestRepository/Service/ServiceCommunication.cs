@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using System.Xml.Serialization;
-using System.Runtime.Serialization.Json;
 
 namespace PImage.Category.Client.RestRepository.Service
 {
@@ -23,7 +17,7 @@ namespace PImage.Category.Client.RestRepository.Service
 
 		#region Public Methods
 
-		public void NotifyWebService(string json, string serviceURI, string requestMethod, string contentType, bool verifyResponse = false)
+		public void NotifyService(string json, string serviceURI, string requestMethod, string contentType, bool verifyResponse = false)
 		{
             try
             {
