@@ -11,13 +11,31 @@ namespace PImage.Category.Client.RestRepository
             get;
         }
 
-        public FieldsFacade Categories
+        public CategoriesFacade Categories
         {
             get;
             private set;
         }
 
         public SubCategoriesFacade SubCategories
+        {
+            get;
+            private set;
+        }
+
+        public FieldsFacade Fields
+        {
+            get;
+            private set;
+        }
+
+        public FieldValuesFacade FieldValues
+        {
+            get;
+            private set;
+        }
+
+        public ProductsFacade Products
         {
             get;
             private set;
@@ -42,12 +60,14 @@ namespace PImage.Category.Client.RestRepository
 
             ServiceUri = serviceUri;
         }
-
-
+        
         private void InitializeFacades()
         {
-            Categories = new FieldsFacade(this);
+            Categories = new CategoriesFacade(this);
             SubCategories = new SubCategoriesFacade(this);
+            Fields = new FieldsFacade(this);
+            FieldValues = new FieldValuesFacade(this);
+            Products = new ProductsFacade(this);
         }
     }
 }

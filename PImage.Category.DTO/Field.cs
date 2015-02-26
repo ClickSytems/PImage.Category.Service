@@ -9,7 +9,7 @@ namespace PImage.Category.DTO
             this.FieldValues = new HashSet<FieldValues>();
         }
     
-        public int SubCategoryID { get; set; }
+        public int SubCategoryId { get; set; }
         public int Order { get; set; }
         public string Description { get; set; }
         public string Type { get; set; }

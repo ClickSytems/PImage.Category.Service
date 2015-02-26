@@ -33,5 +33,7 @@ namespace PImage.Category.Client.Web.Models
         public System.Data.Entity.DbSet<PImage.Category.DTO.Category> Categories { get; set; }
 
         public System.Data.Entity.DbSet<PImage.Category.DTO.SubCategory> SubCategories { get; set; }
+
+        public System.Data.Entity.DbSet<PImage.Category.DTO.Field> Fields { get; set; }
     }
 }
