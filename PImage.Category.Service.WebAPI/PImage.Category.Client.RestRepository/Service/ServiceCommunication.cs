@@ -76,15 +76,6 @@ namespace PImage.Category.Client.RestRepository.Service
 
 		public T ExecuteWebServiceSearch<T>(string serviceUri)
 		{
-            //HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(serviceUri);
-            //using (Stream webStream = webRequest.GetResponse().GetResponseStream())
-            //{
-            //    var xmlSerializer = new XmlSerializer(typeof(T));
-            //    var result = (T)xmlSerializer.Deserialize(webRequest.GetResponse().GetResponseStream());
-            //    webStream.Flush();
-            //    webStream.Close();
-            //    return result;
-            //}
             HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(serviceUri);
             using (Stream webStream = webRequest.GetResponse().GetResponseStream())
             {
