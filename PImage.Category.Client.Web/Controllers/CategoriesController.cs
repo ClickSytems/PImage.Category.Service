@@ -23,6 +23,12 @@ namespace PImage.Category.Client.Web.Controllers
             return View(ws.Categories.Get());
         }
 
+        public ActionResult Index_Private()
+        {
+            return View(ws.Categories.Get());
+        }
+
+
         // GET: Categories/Details/5
         public ActionResult Details(int? id)
         {
