@@ -50,7 +50,7 @@ namespace PImage.Category.Client.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,SubCategoryID,Order,Description,Type")] Field field)
+        public ActionResult Create([Bind(Include = "Id,SubCategoryId,Order,Description,Type")] Field field)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace PImage.Category.Client.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,SubCategoryID,Order,Description,Type")] Field field)
+        public ActionResult Edit([Bind(Include = "Id,SubCategoryId,Order,Description,Type")] Field field)
         {
             if (ModelState.IsValid)
             {

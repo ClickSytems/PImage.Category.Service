@@ -215,9 +215,14 @@
     <Compile Include="Migrations\201502261935083_Properties_Checked.Designer.cs">
       <DependentUpon>201502261935083_Properties_Checked.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503011302036_Notations.cs" />
+    <Compile Include="Migrations\201503011302036_Notations.Designer.cs">
+      <DependentUpon>201503011302036_Notations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\EditViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -306,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502261935083_Properties_Checked.resx">
       <DependentUpon>201502261935083_Properties_Checked.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503011302036_Notations.resx">
+      <DependentUpon>201503011302036_Notations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

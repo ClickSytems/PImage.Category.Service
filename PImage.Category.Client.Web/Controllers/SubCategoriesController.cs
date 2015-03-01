@@ -18,7 +18,7 @@ namespace PImage.Category.Client.Web.Controllers
         private ServiceConnection ws = new ServiceConnection(ConfigurationManager.AppSettings["RestServiceURL"]);
 
         // GET: SubCategories
-        public ActionResult Index()
+        public ActionResult Index(int? id = null)
         {
             return View(ws.SubCategories.Get());
         }
@@ -38,10 +38,16 @@ namespace PImage.Category.Client.Web.Controllers
             return View(subCategory);
         }
 
-        // GET: SubCategories/Create
-        public ActionResult Create()
+        //// GET: SubCategories/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
+
+        public ActionResult Create(int id)
         {
-            return View();
+            SubCategory sub = new SubCategory() {CategoryId = id};
+            return View(sub);
         }
 
         // POST: SubCategories/Create
@@ -54,7 +60,9 @@ namespace PImage.Category.Client.Web.Controllers
             if (ModelState.IsValid)
             {
                 ws.SubCategories.Create(subCategory);
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                //return RedirectToAction("Index", "Categories");
+                return RedirectToAction("Edit", "Categories", new { id = subCategory.CategoryId });
             }
 
             return View(subCategory);
@@ -85,7 +93,8 @@ namespace PImage.Category.Client.Web.Controllers
             if (ModelState.IsValid)
             {
                 ws.SubCategories.Update(subCategory);
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction("Edit", "Categories", new { id = subCategory.CategoryId});
             }
             return View(subCategory);
         }
@@ -111,7 +120,8 @@ namespace PImage.Category.Client.Web.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ws.SubCategories.Delete(id);
-            return RedirectToAction("Index");
+            //return RedirectToAction("Index");
+            return RedirectToAction("Edit", "Categories", new { id = id });
         }
 
         protected override void Dispose(bool disposing)

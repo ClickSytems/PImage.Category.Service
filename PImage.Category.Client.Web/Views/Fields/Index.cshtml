@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<PImage.Category.DTO.Field>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Índice";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Índice</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Novo", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SubCategoryID)
+            @Html.DisplayNameFor(model => model.SubCategoryId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Order)
@@ -30,7 +30,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.SubCategoryID)
+            @Html.DisplayFor(modelItem => item.SubCategoryId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Order)
@@ -42,9 +42,9 @@
             @Html.DisplayFor(modelItem => item.Type)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

@@ -1,15 +1,12 @@
 ﻿@model IEnumerable<PImage.Category.DTO.Category>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Índice";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Índice</h2>
 
-<p>
-    @Html.ActionLink("Novo", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -30,11 +27,14 @@
             @Html.DisplayFor(modelItem => item.Slug)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { style = "text-decoration:underline" }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.Id }, new { style = "text-decoration:underline" }) |
+            @Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { style = "text-decoration:underline" })
         </td>
     </tr>
 }
 
 </table>
+<p>
+    @Html.ActionLink("Novo", "Create", "Categories", new { style = "text-decoration:underline" })
+</p>

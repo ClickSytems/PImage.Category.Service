@@ -181,6 +181,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502262346356_InitialCreate.cs" />
+    <Compile Include="Migrations\201502262346356_InitialCreate.Designer.cs">
+      <DependentUpon>201502262346356_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503011318058_Initial_Client.cs" />
+    <Compile Include="Migrations\201503011318058_Initial_Client.Designer.cs">
+      <DependentUpon>201503011318058_Initial_Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Models\CategoryViewModel.cs" />
@@ -291,6 +300,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PImage.Category.Common\PImage.Category.Common.csproj">
+      <Project>{1c8e75f9-3668-4a23-8ed5-a8e5e8a6a5d4}</Project>
+      <Name>PImage.Category.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PImage.Category.DTO\PImage.Category.DTO.csproj">
       <Project>{7bb16f0e-7368-46ee-937a-cff4582fc4ab}</Project>
       <Name>PImage.Category.DTO</Name>
@@ -301,6 +314,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201502262346356_InitialCreate.resx">
+      <DependentUpon>201502262346356_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503011318058_Initial_Client.resx">
+      <DependentUpon>201503011318058_Initial_Client.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

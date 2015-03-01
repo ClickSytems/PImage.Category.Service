@@ -21,6 +21,8 @@ namespace PImage.Category.Client.RestRepository.Repositories
         public const string SUBCATEGORY_DELETE_URI = "/api/SubCategories/{0}";
         public const string SUBCATEGORY_DELETE_URI_TYPE = "DELETE";
 
+        public const string SUBCATEGORY_FROM_CATEGORY_ID_GET_URI = "/api/GetFromCategoryId/{0}";
+        
         public const string CONTENT_TYPE = "application/json";
 
         public SubCategoryRepository()
@@ -71,6 +73,24 @@ namespace PImage.Category.Client.RestRepository.Repositories
             return categories;
         }
 
+        public List<DTO.SubCategory> GetFromCategoryId(int id, string serviceURI)
+        {
+            List<DTO.SubCategory> categories = new List<DTO.SubCategory>();
+
+            string fullUri = string.Format(serviceURI + SUBCATEGORY_FROM_CATEGORY_ID_GET_URI, id);
+
+            try
+            {
+                categories = RestService.ExecuteWebServiceSearch<List<DTO.SubCategory>>(fullUri);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return categories;
+        }
+
         public DTO.SubCategory Get(int id, string serviceURI)
         {
 
@@ -91,7 +111,7 @@ namespace PImage.Category.Client.RestRepository.Repositories
             return category;
 
         }
-
+        
         public void Create(DTO.SubCategory category, string serviceURI)
         {
             try

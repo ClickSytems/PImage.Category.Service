@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using PImage.Category.DTO;
 using PImage.Category.Client.RestRepository;
 using System.Configuration;
+using PImage.Category.Client.Web.Models;
 
 namespace PImage.Category.Client.Web.Controllers
 {
@@ -36,12 +37,18 @@ namespace PImage.Category.Client.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             var category = ws.Categories.Get(id.Value);
             if (category == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+
+            var subCategories = ws.SubCategories.GetFromCategoryId(id.Value);
+
+            var model = new CategoryViewModel() { Category = category, SubCategories = subCategories };
+
+            return View(model);
         }
 
         // GET: Categories/Create
@@ -78,7 +85,12 @@ namespace PImage.Category.Client.Web.Controllers
             {
                 return HttpNotFound();
             }
-            return View(category);
+            var subCategories = ws.SubCategories.GetFromCategoryId(id.Value);
+
+
+            var model = new CategoryViewModel() {Category = category, SubCategories = subCategories };
+
+            return View(model);
         }
 
         // POST: Categories/Edit/5
